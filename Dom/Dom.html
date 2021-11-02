@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <li>Eventos</li>
+    <li>Forms</li>
+    <li>Ajax-fetch</li>
+    <li>History</li>
+    <li>Web storage</li>
+    <li>Drag & Drop</li>
+    <li>indexed db</li>
+    <li>canvas</li>
+    <li>match-media</li>
+    <hr><br>
+
+    <h3>Manejo del Dom</h3>
+    <p id="que-es">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatum cum molestiae fugiat itaque reprehenderit! In totam consequuntur, doloribus amet illum exercitationem, quibusdam ipsum velit quidem sunt doloremque. Exercitationem, velit.</p>
+    <nav id="menu">
+        <ul>
+            <li><a href="">seccion-1</a></li>
+            <li><a href="">seccion-2</a></li>
+            <li><a href="">seccion-3</a></li>
+            <li><a href="">seccion-4</a></li>
+            <li><a href="">seccion-5</a></li>
+        </ul>
+    </nav>
+    <input type="text" name="nombre" >
+    <a class="link-dom" data-id="1" data-description="Document Object Model" href="dom.html">Dom</a>
+    
+    <section class="cards">
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/tech"  alt="Tech" >
+            <figcaption>Tech</figcaption>
+        </figure>
+
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/animals" alt="animals" >
+            <figcaption>animals</figcaption>
+        </figure>
+
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/people" alt="people" >
+            <figcaption>people</figcaption>
+        </figure>
+
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/Arch" alt="Arch" >
+            <figcaption>Arch</figcaption>
+        </figure>
+
+        <figure class="card">
+            <img src="https://placeimg.com/200/200/Nature" alt="Nature" >
+            <figcaption>Nature</figcaption>
+        </figure>
+    </section>
+    <h3>Manejadores de eventos</h3>
+
+    <button onclick= "holaMundo()">Evento atributo html</button>
+    <button id="event-sinaptico">Manejador semantico</button>
+    <button id="event-multiple">evento on manejador multiple</button>
+    <button id="event-remove">Removiendo eventos con manejadores multiple</button>
+    <h4>Flujo de eventos</h4>
+
+    <section class="eventos-flujo">
+        <div class="uno">
+            <div class="dos">
+                <div class="tres">
+                    <a href="https://jonmircha.com/" target="_blank" rel="noopener">jonmircha</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <br>
+    <br>
+    <br>
+
+    <h1>Bom browser object model</h1>
+
+    <button id="abrir-ventana">abrir</button>
+    <button id="cerrar-ventana">cerrar</button>
+    <button id="impimir-ventana">imprimir</button>
+    
+    <template id="template-card">
+        <figure class="card">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+
+    <script src="Dom.js"></script>
+</body>
+</html>
