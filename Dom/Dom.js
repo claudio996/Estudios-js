@@ -128,3 +128,19 @@ $texto.textContent = texto; //solo texto.
 $texto.innerHTML = texto; //solo codigo html
 $texto.outerHTML  = texto;
 */
+
+//Dom traversing -> recorrer elemetos del Dom
+$card = document.querySelector(".cards")
+console.log($card);
+console.log($card.children); //hijo del nodo card.
+console.log($card.children[2]);//accediendo al hijo y al elemento especificado[]
+
+console.log($card.parentElement); //Accediendo al elemento padre de nuestro nodo (del quien dependemos)
+console.log($card.firstElementChild); //accediendo al primer elemento del hijo card.
+console.log($card.lastElementChild);  //accediendo al ultimo elemento del hijo card.
+
+console.log($card.previousElementSibling); //elemento-anterior a nuestro nodo
+console.log($card.nextElementSibling); //elemento-siguiente
+console.log($card.closest("div")); //devuelve el ascendiente más cercano al elemento actual (o el propio elemento actual) que coincida con el selector
+console.log($card.closest("body"));
+console.log($card.children[3].closest("section"));
