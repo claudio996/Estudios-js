@@ -5,8 +5,6 @@ que tienen propiedades y métodos. Esencialmente, conecta las páginas web a scr
 //Selectores
 /*
 console.log("---------Elementos del documento--------");
-
-
 console.log(document);
 console.log(document.head);
 console.log(document.body);
@@ -50,3 +48,25 @@ console.log(document.querySelector("#menu li")); // accediendo al hijo de cierto
 console.log(document.querySelectorAll("#menu li")); //accediendo a todos los hijos de cierto elemento.
 */
 
+/* ----------------- */
+
+
+//accediendo a elementos.
+
+//Obtener y establecer parametreos de cierta clase.. 
+/*
+console.log(document.querySelector(".link-dom").getAttribute("href"));//Obteniendo atributtos.
+console.log(document.querySelector(".links").getAttribute("href"));
+console.log(document.documentElement.getAttribute("lang"));
+console.log(document.documentElement.lang = "en");
+console.log(document.documentElement.setAttribute("lang", "es"));
+console.log(document.documentElement.lang);
+const $linkDOM = document.querySelector(".link-dom") //referencias a elementos del dom.
+//$linkDOM.getAttribute('href')
+$linkDOM.setAttribute("rel","noopener"); //estableciendo un nuevo atributo.
+$linkDOM.setAttribute("target","blank");//estableciendo nuevos parametros.
+$linkDOM.setAttribute("href","https://youtube.cl");
+//$linkDOM.removeAttribute("href");
+console.log($linkDOM.hasAttribute("rel"));
+console.log($linkDOM.removeAttribute("rel"));
+*/
