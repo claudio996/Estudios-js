@@ -119,4 +119,12 @@ $card.classList.toggle("rotate-135");
 $card.classList.add("rotate-45"); //agregando clases. 
 $card.classList.add("opacity-80");
 $card.classList.replace("opacity-80","opacity-5"); //cambiando clases.
+/------------------------------------------------*/
+/* Texto HTML Agregando texto a nuestros elementos. */
+/*
+const $texto = document.getElementById("que-es");
+let texto = "<p><mark>Lorem ipsum dolor smddnd dhdhdhd  dgdgdgd gddgdggd gdgdgdgd gdgdgdgd <p/> <p>Lorem ipsum dolor smddnd dhdhdhd  dgdgdgd gddgdggd gdgdgdgd gdgdgdgd <p/> <p>Lorem ipsum dolor smddnd dhdhdhd  dgdgdgd gddgdggd gdgdgdgd gdgdgdgd </mark><p/>"
+$texto.textContent = texto; //solo texto.
+$texto.innerHTML = texto; //solo codigo html
+$texto.outerHTML  = texto;
 */
