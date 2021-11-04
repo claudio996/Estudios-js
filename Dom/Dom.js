@@ -78,6 +78,7 @@ $linkDOM.hasAttribute("data-id");
 $linkDOM.removeAttribute("data-id");
 /* ------------------------------*/
 
+
 /* Variables CSS - Custom Properties CSS permite establecer nuevos valores a nuestro css desde javascript 
 
 const $html = document.documentElement, //accediendo al elemento del dom.
@@ -100,23 +101,3 @@ console.log(darkColor,YellowColor);
 $body.style.backgroundColor = darkColor; //estableciendo un nuevo fondo de color atravez de nuestras custom css.
 $body.style.color = YellowColor;
 /*--------------------------------*/
-
-/* Acediendo a las clases de nuestros nodos  */
-const $card = document.querySelector(".card")
-console.log($card);
-console.log($card.className);
-console.log($card.classList);
-
-$card.classList.add("rotate-45") //accediendo a la clase rotate-45 de nuestro css
-console.log($card.classList);
-console.log($card.className);
-$card.classList.contains("rotate-45"); // accedemos a nuestras clases css
-
-$card.classList.replace("rotate-45", "rotate-135"); //remplazando clases. 
-$card.classList.add("sepia");
-
-$card.classList.toggle("sepia");
-$card.classList.toggle("rotate-135");
-$card.classList.add("rotate-45"); //agregando clases. 
-$card.classList.add("opacity-80");
-$card.classList.replace("opacity-80","opacity-5"); //cambiando clases.
