@@ -179,3 +179,48 @@ $ul.appendChild($fragment); //añadimos el fragment a la lista.
 document.body.appendChild($ul); //agregamos la lista al documentBody.
 */
 /* ----------------------------------------------*/
+
+//Templates los templates son 
+
+$cards = document.querySelector(".cards"); // utilizamos nuestro selector.
+$template = document.getElementById("template-card").content;
+$fragment = document.createDocumentFragment(); //creamos el fragment.
+
+cardContent = [ //simulando apis
+  {
+    title: "Animales",
+    img :"https://placeimg.com/200/200/animals"
+  },
+
+  {
+    title: "Tecnologia",
+    img :"https://placeimg.com/200/200/tech"
+  },
+  {
+    title: "Arquitectura",
+    img :"https://placeimg.com/200/200/arch"
+  },
+
+  {
+    title: "Personas",
+    img :"https://placeimg.com/200/200/people"
+  },
+
+  {
+    title: "Naturaleza",
+    img :"https://placeimg.com/200/200/nature"
+  }
+]
+
+cardContent.forEach(element => { //recorremos y asignamos atributos  especificos de cada uno. 
+  //Atravez de nuestro template establecemos los elementos con lo de nuestro arreglo.
+  $template.querySelector("img").setAttribute("src", element.img); //establecemos las imagenes y su ser al nodo img
+  $template.querySelector("img").setAttribute("alt", element.title);  //establecemos el titulo las imagenes al nodo img
+  $template.querySelector("figCaption").textContent = element.title; //establecemos el titulo a nuestro nodo figcaption.
+
+  let $clone = document.importNode($template, true); //clonamos nuestro template.
+  $fragment.appendChild($clone)//creamos el fragmento temporal con su respectivo clon.
+});
+
+$cards.appendChild($fragment);//agregamos el fragmento a nuestro nodo padre.
+
