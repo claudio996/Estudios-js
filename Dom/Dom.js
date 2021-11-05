@@ -281,23 +281,64 @@ $eventoMultiple.addEventListener("click", e => {
 
 --------------------------------- */
 //funcion que se ejecuta en un evento solo recibe el evento en si. solo un parametro
+/*
+const $eventoRemover = document.getElementById('event-remove');
+const saludar = (nombre = "hola desconocido") => alert(`hola ${nombre}`)
 
-  const $eventoRemover = document.getElementById('event-remove');
-  const saludar = (nombre = "hola desconocido") => alert(`hola ${nombre}`)
 
+$eventoMultiple.addEventListener('click', () => {
+  saludar('claudio')
+});
 
-  $eventoMultiple.addEventListener('click', () => {
-    saludar('claudio')
-  });
+$eventoRemover.addEventListener('dblclick', (e) => {
+})
+const $removerDobl = (e) => {
+  alert(`removiendo el evento ${e.type}`);
+  console.log(e);
 
-  $eventoRemover.addEventListener('dblclick', (e) => {
-  })
-  const $removerDobl = (e) => {
-    alert(`removiendo el evento ${e.type}`);
-    console.log(e);
+  $eventoRemover.removeEventListener('dblclick', $removerDobl)
+  $eventoRemover.disabled = true
+}
+$eventoRemover.addEventListener('dblclick', $removerDobl)
 
-    $eventoRemover.removeEventListener('dblclick', $removerDobl)
-    $eventoRemover.disabled = true
+-------------------------------------------*/
+
+//Eventos flujo de eventos fase -> burbuja-captura -- event delegation
+//flujo del evento --> propagacion fase burbuja micro-macro
+
+const $divsEvents = document.querySelectorAll(".eventos-flujo div");
+console.log($divsEvents);
+
+//nodelist
+const flujoevents = (e) => {
+   alert(`hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+   //e.stopPropagation();
+}
+
+$divsEvents.forEach((elemento) => { //recorriendo el flujo del selector elementos flujo.
+   //div.addEventListener('click', flujoevents,false); //Podemos activar o desactivar el evento de captura.
+   //fase de captura
+   //div.addEventListener('click',flujoevents,true)
+   //fase por defecto burbuja expandiendo, capture -> solo una vez.
+   elemento.addEventListener('click', flujoevents, { // detectando-
+      capture: false,
+      once: true
+   })
+})
+
+const $link_event = document.querySelector(".eventos-flujo a"); //accediendo a los enlaces del selector eventos-flujo.
+/*Delegacion de eventos (solicitud de datos ej api..) asignamos solo al nodo principal
+ el document asi solo tenemos una asignacion al evento  luego la programacion. utilizacion en ajax-fetch.*/
+
+document.addEventListener('click', (e) => {
+  console.log('click en', e.target);
+
+  if (e.target.matches(".eventos-flujo div")) { //detectar los elementos 
+     flujoevents(e)
   }
-  $eventoRemover.addEventListener('dblclick', $removerDobl)
-
+  if (e.target.matches(".eventos-flujo a")) {
+     console.log(`hola te saludo yo mismo`);
+     e.preventDefault();// liminar el comportamiento pedeterminado. en este caso el comportamiento por defecti
+  }
+  
+});
