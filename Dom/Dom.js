@@ -356,9 +356,10 @@ $divEvents.forEach((div) => {
 });
 
 --------------------------*/
-//Bom 
-//El Browser Object Model (BOM) es una convención específica que se refiere a 
-//todos los objetos expuestos por el navegador web. A diferencia del Document Object Model (DOM), no hay ningún estándar para la implementación y ninguna definición estricta, por los que los proveedores de navegadores son libres de implementar el BOM de cualquier manera que deseen.
+/*Bom 
+El Browser Object Model (BOM) es una convención específica que se refiere a 
+todos los objetos expuestos por el navegador web. A diferencia del Document Object Model (DOM), no hay ningún estándar para la implementación y ninguna definición estricta, por los que los proveedores de navegadores son libres de implementar el BOM de cualquier manera que deseen.
+
 window.addEventListener("resize",(e) => {
    console.log('--------------evento resize');
    console.log(window.innerWidth);
@@ -407,4 +408,27 @@ btnCerrar.addEventListener('click', (e)=> {
 btnImprimir.addEventListener('click', (e)=> {
    ventana.print();
 })
+---------------------------------*/
+/* objetos  del bom -> diferentes metodos para poder traer diferentes caracteristicas del navegador.
+console.log(location);
+console.log(window.origin);
 
+console.log(location.port);
+console.log(location.hostname); //el host
+console.log(location.href); //dominio
+console.log(location.hash);
+console.log(location.search);
+
+console.log(location.pathname);
+console.log(window.history);
+
+console.log(window.history.length);
+
+console.log(window.history.back(3));
+console.log(window.history.forward(2));
+
+console.log(window.history.go(3));
+
+console.log(window.navigator); //navigator proporciona de muchos metodos.
+console.log(window.navigator.connection); //proporciona informacion del navegador.
+*/
