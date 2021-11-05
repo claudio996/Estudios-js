@@ -179,9 +179,7 @@ $ul.appendChild($fragment); //añadimos el fragment a la lista.
 document.body.appendChild($ul); //agregamos la lista al documentBody.
 */
 /* ----------------------------------------------*/
-
-//Templates los templates son 
-
+/*Trabajos con templates este es un mecanismo para mantener codigo HTML para ser instamceado en su tiempo de ejecucion.
 $cards = document.querySelector(".cards"); // utilizamos nuestro selector.
 $template = document.getElementById("template-card").content;
 $fragment = document.createDocumentFragment(); //creamos el fragment.
@@ -223,4 +221,36 @@ cardContent.forEach(element => { //recorremos y asignamos atributos  especificos
 });
 
 $cards.appendChild($fragment);//agregamos el fragmento a nuestro nodo padre.
+----------------------------------------*/
+
+/*  InsertAdjacent
+
+insertAdjacent  método insertAdjacentHTML() de la interfaz Element analiza la cadena de texto 
+introducida como cadena HTML o XML e inserta al árbol DOM ...
+
+.insertAdjacentElement(position, el)
+.insertAdjacentHTML(position, HTML)
+.insertAdjacenttEXT(position, TEXT )
+
+posiciones
+
+'beforebegin': Antes que el propio elemento.
+'afterbegin': Justo dentro del elemento, antes de su primer elemento hijo.
+'beforeend': Justo dentro del elemento, después de su último elemento hijo.
+'afterend': Después del propio elemento.
+
+se recorre el elemento y se inserta en orden de las caracteristicas del nodo.
+
+const $card = document.querySelector(".cards");
+$newCard = document.createElement("figure");
+
+let $contentCard = '<img src ="https://placeimg.com/200/200/any" alt = "Any"><figcaption></figcaption>';
+$newCard.classList.add("card"); //añadiendo clase card al nodo figure.
+
+$newCard.insertAdjacentHTML("beforeend", $contentCard); //insertar Justo dentro del elemento, después de su último elemento hijo.
+$newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any") // Justo dentro del elemento, antes de su primer elemento hijo.
+$card.insertAdjacentElement("afterbegin", $newCard); //Justo dentro del elemento, antes de su primer elemento hijo.
+$card.insertAdjacentElement("beforebegin", $newCard); //elemento html
+$card.insertAdjacentElement("beforeend", $newCard);
+*/
 
