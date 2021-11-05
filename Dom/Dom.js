@@ -129,18 +129,53 @@ $texto.innerHTML = texto; //solo codigo html
 $texto.outerHTML  = texto;
 */
 
-//Dom traversing -> recorrer elemetos del Dom
+/*Dom traversing -> recorrer elemetos del Dom
+
 $card = document.querySelector(".cards")
 console.log($card);
 console.log($card.children); //hijo del nodo card.
-console.log($card.children[2]);//accediendo al hijo y al elemento especificado[]
-
-console.log($card.parentElement); //Accediendo al elemento padre de nuestro nodo (del quien dependemos)
+console.log($card.children[2]);//accediendo al hijo 2 del nodo card.
+console.log($card.parentElement); //Accediendo al elemento padre de nuestro nodo card (nodo del quien dependemos)
 console.log($card.firstElementChild); //accediendo al primer elemento del hijo card.
 console.log($card.lastElementChild);  //accediendo al ultimo elemento del hijo card.
-
 console.log($card.previousElementSibling); //elemento-anterior a nuestro nodo
 console.log($card.nextElementSibling); //elemento-siguiente
 console.log($card.closest("div")); //devuelve el ascendiente más cercano al elemento actual (o el propio elemento actual) que coincida con el selector
 console.log($card.closest("body"));
 console.log($card.children[3].closest("section"));
+//------------------------------*/
+/*Creando del dom elemetos y fragmentos  cerando elementos de forma dinamica.*/
+/*
+const $figure = document.createElement("figure"); //Con create element creamos un nodo cualquiera.
+$img = document.createElement("img");
+$figcaption = document.createElement("figcaption");
+$figcaptiontext = document.createTextNode("animals"); //creamos el texto para el nodo figCaption.
+$cards = document.querySelector(".cards"); //Accedemos al elemento cards atravez del .
+
+$figure.classList.add("card"); //al nodo  figure le agregamos la clase card.
+
+$img.setAttribute("src","https://placeimg.com/200/200/animals"); //Establecemos los atributos al nodo.
+$img.setAttribute("alt","animals"); //Establecemos los atributos al nodo img.
+
+//ARMAMOS LA CARDS.
+$figcaption.appendChild($figcaptiontext); //pasamos el nodo hijo->(figcaptionText)  al nodo padre (figCaption).
+$figure.appendChild($img); //pasamos el nodo hijo($img) a el nodo padre (figure).
+$figure.appendChild($figcaption) //pasamos el nodo hijo($img) a el nodo padre (figure).
+$cards.appendChild($figure); //pasamos al nodo hijo(figure) al nodo padre(cards)
+
+const meses  = ['enero', 'febrero', 'marzo', 'abril']
+$ul = document.createElement("ul"); //creando una lista. (ul)
+$fragment  = document.createDocumentFragment(); //creacion del fragment ->  Se utiliza como una versión ligera de Document que almacena un segmento de una estructura de documento compuesta de nodos como un documento estándar.
+
+meses.forEach(element => { //recorremos los meses
+  const $li = document.createElement("li"); //creamos elementos de la lista.
+  $li.textContent = element; //asignamos los meses a la lista.
+  $fragment.appendChild($li); // guardamos en el fragment la lista.
+});
+
+$texto = document.createTextNode("Meses del año");
+
+$ul.appendChild($fragment); //añadimos el fragment a la lista.
+document.body.appendChild($ul); //agregamos la lista al documentBody.
+*/
+/* ----------------------------------------------*/
