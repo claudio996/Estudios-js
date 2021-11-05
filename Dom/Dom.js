@@ -252,5 +252,30 @@ $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any") // 
 $card.insertAdjacentElement("afterbegin", $newCard); //Justo dentro del elemento, antes de su primer elemento hijo.
 $card.insertAdjacentElement("beforebegin", $newCard); //elemento html
 $card.insertAdjacentElement("beforeend", $newCard);
-*/
+-------------------------*/
+
+// Tipos de eventos semantico-multiple-addEventlistener.
+const holaMundo = () => alert('Hola mundo');
+const $eventoSemantico = document.getElementById('event-sinaptico');
+$eventoSemantico.onclick = holaMundo; // pasamos la funcion como parametro.
+/* Para ebentos multiples. */
+const $eventoMultiple = document.getElementById('event-multiple'); //accedemos al id de nuestro boton.
+
+$eventoSemantico.onclick = (e)=> {  // e => representa el evento.
+  alert('Manejador de eventos semantico')
+  console.log(e);
+  console.log(event);
+} 
+//AddEventListener 
+// Registra un evento a un objeto en específico. El Objeto especifico puede ser un simple elemento en un archivo, el mismo ...
+//evento multiple. 
+$eventoMultiple.addEventListener("click", holaMundo); //Detectamos el evento y luego la funcion ya preescrita.
+
+$eventoMultiple.addEventListener("click", e => {
+  alert("Hola mundo Manejador de eventos Multiple");
+  holaMundo()
+  console.log(e);
+  console.log(e.type);
+  console.log(e.target);
+});
 
