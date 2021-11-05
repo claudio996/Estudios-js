@@ -254,11 +254,11 @@ $card.insertAdjacentElement("beforebegin", $newCard); //elemento html
 $card.insertAdjacentElement("beforeend", $newCard);
 -------------------------*/
 
-// Tipos de eventos semantico-multiple-addEventlistener.
+/*Tipos de eventos semantico-multiple-addEventlistener.
 const holaMundo = () => alert('Hola mundo');
 const $eventoSemantico = document.getElementById('event-sinaptico');
-$eventoSemantico.onclick = holaMundo; // pasamos la funcion como parametro.
-/* Para ebentos multiples. */
+//eventoSemantico.onclick = holaMundo; // pasamos la funcion como parametro.
+/ Para ebentos multiples. 
 const $eventoMultiple = document.getElementById('event-multiple'); //accedemos al id de nuestro boton.
 
 $eventoSemantico.onclick = (e)=> {  // e => representa el evento.
@@ -278,4 +278,26 @@ $eventoMultiple.addEventListener("click", e => {
   console.log(e.type);
   console.log(e.target);
 });
+
+--------------------------------- */
+//funcion que se ejecuta en un evento solo recibe el evento en si. solo un parametro
+
+  const $eventoRemover = document.getElementById('event-remove');
+  const saludar = (nombre = "hola desconocido") => alert(`hola ${nombre}`)
+
+
+  $eventoMultiple.addEventListener('click', () => {
+    saludar('claudio')
+  });
+
+  $eventoRemover.addEventListener('dblclick', (e) => {
+  })
+  const $removerDobl = (e) => {
+    alert(`removiendo el evento ${e.type}`);
+    console.log(e);
+
+    $eventoRemover.removeEventListener('dblclick', $removerDobl)
+    $eventoRemover.disabled = true
+  }
+  $eventoRemover.addEventListener('dblclick', $removerDobl)
 
