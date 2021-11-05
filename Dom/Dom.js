@@ -280,8 +280,8 @@ $eventoMultiple.addEventListener("click", e => {
 });
 
 --------------------------------- */
-//funcion que se ejecuta en un evento solo recibe el evento en si. solo un parametro
-/*
+/*funcion que se ejecuta en un evento solo recibe el evento en si. solo un parametro
+
 const $eventoRemover = document.getElementById('event-remove');
 const saludar = (nombre = "hola desconocido") => alert(`hola ${nombre}`)
 
@@ -304,7 +304,7 @@ $eventoRemover.addEventListener('dblclick', $removerDobl)
 -------------------------------------------*/
 
 //Eventos flujo de eventos fase -> burbuja-captura -- event delegation
-//flujo del evento --> propagacion fase burbuja micro-macro
+/*flujo del evento --> propagacion fase burbuja micro-macro
 
 const $divsEvents = document.querySelectorAll(".eventos-flujo div");
 console.log($divsEvents);
@@ -327,8 +327,8 @@ $divsEvents.forEach((elemento) => { //recorriendo el flujo del selector elemento
 })
 
 const $link_event = document.querySelector(".eventos-flujo a"); //accediendo a los enlaces del selector eventos-flujo.
-/*Delegacion de eventos (solicitud de datos ej api..) asignamos solo al nodo principal
- el document asi solo tenemos una asignacion al evento  luego la programacion. utilizacion en ajax-fetch.*/
+Delegacion de eventos (solicitud de datos ej api..) asignamos solo al nodo principal
+ el document asi solo tenemos una asignacion al evento  luego la programacion. utilizacion en ajax-fetch.
 
 document.addEventListener('click', (e) => {
   console.log('click en', e.target);
@@ -342,3 +342,69 @@ document.addEventListener('click', (e) => {
   }
   
 });
+
+$divEvents.forEach((div) => {
+   //div.addEventListener("click", flujoEventos) 
+   div.addEventListener("click", flujoEventos)
+   /*
+   div.addEventListener("click", flujoEventos, {
+   
+      capture:false,
+      once:true
+   })
+   
+});
+
+--------------------------*/
+//Bom 
+//El Browser Object Model (BOM) es una convención específica que se refiere a 
+//todos los objetos expuestos por el navegador web. A diferencia del Document Object Model (DOM), no hay ningún estándar para la implementación y ninguna definición estricta, por los que los proveedores de navegadores son libres de implementar el BOM de cualquier manera que deseen.
+window.addEventListener("resize",(e) => {
+   console.log('--------------evento resize');
+   console.log(window.innerWidth);
+   console.log(window.innerHeight);
+   console.log(window.innerWidth);
+   console.log(window.innerHeight);
+   console.log(e);
+
+})
+
+window.addEventListener("scroll", (e) => {
+
+   window.console.log(window.scrollX);
+   window.console.log(window.scrollY);
+})
+
+window.addEventListener("load", e => {
+
+   window.console.log(window.screenX);
+   window.console.log(window.screenY);
+})
+
+//$(window).load()
+
+document.addEventListener('DOMContentLoaded', e => {
+
+   console.log("-------DomContentLoades---------");
+   window.console.log(window.screenX);
+   window.console.log(window.screenY);
+})
+
+const btnAbrir = document.getElementById("abrir-ventana")
+const btnCerrar = document.getElementById("cerrar-ventana")
+const btnImprimir = document.getElementById("impimir-ventana")
+
+let ventana;
+
+btnAbrir.addEventListener('click', (e)=> {
+  ventana = window.open("https://youtube.com/")
+})
+
+btnCerrar.addEventListener('click', (e)=> {
+ ventana.close();
+})
+
+btnImprimir.addEventListener('click', (e)=> {
+   ventana.print();
+})
+
